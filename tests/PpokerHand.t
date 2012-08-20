@@ -3,24 +3,16 @@ BEGIN {push @INC, '..'};
 use strict;
 use Test::More tests => 3;
 use constant {
-	TWO => 0,
-	THREE => 1,
-	FOUR => 2,
-	FIVE => 3,
-	SIX => 4,
-	SEVEN => 5,
-	EIGHT => 6,
-	NINE => 7,
-	TEN => 8,
-	JACK => 9,
-	QUEEN => 10,
-	KING => 11,
+	TWO => 0,	THREE => 1,
+	FOUR => 2,	FIVE => 3,
+	SIX => 4,	SEVEN => 5,
+	EIGHT => 6,	NINE => 7,
+	TEN => 8,	JACK => 9,
+	QUEEN => 10,	KING => 11,
 	ACE => 12,
 	
-	SPADE => 0,
-	HEART => 1,
-	CLUB => 2,
-	DIAMOND => 3
+	SPADE => 0,	HEART => 1,
+	CLUB => 2,	DIAMOND => 3
 };
 
 #ok 1 & 2 - package available
@@ -48,10 +40,12 @@ subtest 'create a deck' => sub {
 };
 
 #ok 4
+#a player's hand
 my $h0 = [
 	$d[TWO][SPADE],
 	$d[KING][HEART]
 ];
+#a table's community cards
 my $c0 = [
 	$d[NINE][SPADE],
 	$d[SIX][DIAMOND],
@@ -59,6 +53,7 @@ my $c0 = [
 	$d[KING][CLUB],
 	$d[QUEEN][DIAMOND]
 ];
+#the expected best hand for that player
 my $r0 = [
 	$d[KING][HEART],
 	$d[KING][CLUB],
