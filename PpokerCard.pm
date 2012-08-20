@@ -52,6 +52,7 @@ sub suit {
 
 #functions below this point, not methods.
 
+
 sub cmpRank {
 	my $card1 = shift;
 	my $card2 = shift;
