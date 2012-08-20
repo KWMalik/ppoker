@@ -1,6 +1,7 @@
 package PpokerHand;
 
 use strict;
+use PpokerCard;
 
 my @hands = (
 	"high card",
@@ -18,6 +19,11 @@ my @hands = (
 sub whichHand {
 	my $hand = shift; #array ref to object refs of cards
 	my $comu = shift;
+
+    #combine arrays
+    my @all = (@$hand,@$comu);
+    #sort descending all cards using the cmpRank comparison function
+    my @ordered = reverse sort PpokerCard::cmpRank @all;
 }
 
 #given an array of poker hands, who is the winner?
