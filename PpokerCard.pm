@@ -57,26 +57,14 @@ sub cmpRank {
 	my $card1 = shift;
 	my $card2 = shift;
 	
-	if ($card1->rank > $card2->rank) {
-		return 1;
-	}
-	if ($card1->rank < $card2->rank) {
-		return -1;
-	}
-	return 0;
+	return ($card1->rank <=> $card2->rank);
 }
 
 sub cmpSuit {
 	my $card1 = shift;
 	my $card2 = shift;
 	
-	if ($card1->suit > $card2->suit) {
-		return 1;
-	}
-	if ($card1->suit < $card2->suit) {
-		return -1;
-	}
-	return 0;
+	return ($card1->suit <=> $card2->suit);
 }
 
 1
