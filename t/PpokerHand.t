@@ -17,8 +17,8 @@ use constant {
 
 #ok 1 & 2 - package available
 BEGIN {
-	use_ok('PpokerHand');
-	use_ok('PpokerCard');
+	use_ok('Ppoker::Hand');
+	use_ok('Ppoker::Card');
 };
 
 #ok 3
@@ -28,7 +28,7 @@ subtest 'create a deck' => sub {
 	for(my $i=0;$i<4;$i++) {
 		push @d, [];
 		for(my $j=2;$j<15;$j++) {
-			push @{$d[$i]}, new_ok('PpokerCard' => [$j,$i]);
+			push @{$d[$i]}, new_ok('Ppoker::Card' => [$j,$i]);
 		}
 	}
     #this is just here because I forgot which way push works.
